@@ -35,26 +35,18 @@ hook -group TrailingWhitespaces global WinCreate .* %{
     addhl regex '\h+$' 0:default,red
 }
 
-# autowrap the status.txt file
-hook -group StatusAutowrap global WinCreate .*status\.txt %{
-    set buffer autowrap_column 35
-    autowrap-enable
-
-    hook window WinClose .*(?!status\.txt) %{ echo "test close" }
-}
-
 #################################
 
 set global tabstop 4
 
-map global user n ':eval %{buffernext}<ret>'
-map global user b ':eval %{bufferprev}<ret>'
+map global user n ':eval %{buffer-next}<ret>' -docstring "Switch to next buffer"
+map global user b ':eval %{buffer-previous}<ret>' -docstring "Switch to previous buffer"
 
 # yank and paste to/from external clipboard
-map global user y '<a-|>xsel -b <ret>:echo -color Information "Yanked to clipboard"<ret>'
-map global user p '<a-!>xsel -b -o<ret>:echo -color Information "Pasted from clipboard"<ret>'
+map global user y '<a-|>xsel -b <ret>:echo -markup {Information}"Yanked to clipboard"<ret>' -docstring "Copy to clipboard"
+map global user p '<a-!>xsel -b -o<ret>:echo -markup {Information}"Pasted from clipboard"<ret>' -docstring "Paste from clipboard"
 
-map global user h ':doc shortcuts<ret>'
+map global user h ':doc shortcuts<ret>' -docstring "Show keymapping help"
 
 # yank to system clipboard always
 hook global NormalKey y|d|c %{ nop %sh{
@@ -62,10 +54,13 @@ hook global NormalKey y|d|c %{ nop %sh{
 }}
 
 # write pdb to this row
-map global user d '<esc>oimport pdb; pdb.set_trace()<esc>'
+map global user d '<esc>oimport pdb; pdb.set_trace()<esc>' -docstring "Inser Python's pdb to to line below this line"
 
 # select all occurrences in this buffer
-map global user a '*%s<c-/><ret>'
+map global user a '*%s<c-/><ret>' -docstring "Select all occurrences of this word in the buffer"
+
+# Quickly run compile-pdf
+map global user c ':compile-pdf<ret>' -docstring "Quickly run compile-pdf"
 
 # my personal functions
 def push_kickstart -docstring "Push actual buffer to cobra02" %{
@@ -74,11 +69,30 @@ write
     /home/jkonecny/RH/scripts/vm_scripts/push_kickstart.sh "$kak_buffile" > /dev/null
 
     if [ $? -eq 0 ]; then
-        echo "echo -color Information KS $kak_bufname pushed successful"
+        echo "echo -markup {Information} KS $kak_bufname pushed successful"
     else
-        echo "echo -color Error Push failed"
+        echo "echo -markup {Error} Push failed"
     fi
 }}
+
+# Compile ReST or Doctext to pdf
+def compile-pdf -docstring "Compile output doctext or rest to name.pdf" %{
+write
+%sh{
+    pandoc -s -o ${kak_bufname%%.*}.pdf $kak_bufname
+
+    if [ $? -eq 0 ]; then
+        echo "echo -markup {Information}Conversion to pdf was successful"
+    else
+        echo "echo -markup {Error}Compilationfailed"
+    fi
+}}
+
+
+# easy way how to hide incorrect spelling highlighter
+def hide-spell -docstring "Hide spell correction" %{
+    remove-highlighter hlranges_spell_regions
+}
 
 
 ###############################
@@ -90,7 +104,7 @@ hook global WinSetOption filetype=python %{
        %sh{
             pylint=$(which pylint)
             if [ -z $pylint ]; then
-                echo "echo -color red 'You don't have pylint installed!'"
+                echo "echo -markup {red}'You don't have pylint installed!'"
                 exit 1
             fi
             #if [ -f $kak_buffile ]; then
