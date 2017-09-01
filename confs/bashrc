@@ -84,12 +84,13 @@ alias sl="ls"
 alias la="ll -a"
 alias ll="ls -lh"
 
-alias gitci="git commit"
-alias gitd="git diff --color"
-alias gits="git status"
+alias git_ana_clean="git checkout -- anaconda.spec.in configure.ac"
 
 alias cdp="cd ~/RH/projects"
 alias cds="cd ~/RH/scripts/vm_scripts/"
+
+alias kinitf="kinit jkonecny@FEDORAPROJECT.ORG"
+alias kinitr="kinit jkonecny@REDHAT.COM"
 
 # enviroment variables
 export EDITOR='vim'
