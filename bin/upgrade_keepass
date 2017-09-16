@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cp ~/.mozilla/firefox/*.default/extensions/keefox@*/deps/KeePassRPC.plgx /usr/lib/keepass/plugins/

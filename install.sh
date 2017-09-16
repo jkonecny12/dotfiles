@@ -2,6 +2,8 @@
 
 SCRIPTDIR=$(pwd)/confs
 
+BINDIR=$(pwd)/bin
+
 function install_file {
     if [ ! -e $2 ]; then
         echo "File $2 is missing. Error!" >&2
@@ -21,3 +23,8 @@ function install_file {
 install_file ~/.bashrc $SCRIPTDIR/bashrc
 install_file ~/.config/kak/kakrc $SCRIPTDIR/kakrc
 install_file ~/.tmux.conf $SCRIPTDIR/tmux.conf
+
+for i in $(ls $BINDIR); do
+    install_file ~/bin/$i $BINDIR/$i
+done
+
