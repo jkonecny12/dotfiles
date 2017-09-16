@@ -15,7 +15,7 @@ function install_file {
     elif [ -h $1 ]; then
         echo "File $1 already exists and is symbolic link. Skipping!"
     else
-        echo "Installing config $2"
+        echo "Creating symbolic link to $2"
         ln -s $2 $1
     fi
 }
@@ -24,6 +24,7 @@ install_file ~/.bashrc $SCRIPTDIR/bashrc
 install_file ~/.config/kak/kakrc $SCRIPTDIR/kakrc
 install_file ~/.tmux.conf $SCRIPTDIR/tmux.conf
 
+# install user bin files
 for i in $(ls $BINDIR); do
     install_file ~/bin/$i $BINDIR/$i
 done
