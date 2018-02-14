@@ -23,6 +23,8 @@ function install_file {
 install_file ~/.bashrc $SCRIPTDIR/bashrc
 install_file ~/.config/kak/kakrc $SCRIPTDIR/kakrc
 install_file ~/.tmux.conf $SCRIPTDIR/tmux.conf
+install_file ~/.gitconfig $SCRIPTDIR/gitconfig
+install_file ~/.gitignore $SCRIPTDIR/gitignore
 
 # install user bin files
 for i in $(ls $BINDIR); do
