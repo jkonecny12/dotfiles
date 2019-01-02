@@ -1,6 +1,7 @@
 [user]
     name = Jiri Konecny
     email = jkonecny@redhat.com
+	signingkey = 99BB54998876D4905E72B52B38F52F0E5C3FAD25
 
 [core]
 	editor = kak
@@ -41,3 +42,6 @@
 	tool = meld
 [commit]
 	template = /home/jkonecny/Documents/RH/documents/git/git-message.txt
+	gpgsign = true
+[gpg]
+	program = gpg2
