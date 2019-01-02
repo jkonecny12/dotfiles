@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SCRIPTDIR=$(pwd)/confs
+CONFDIR=$(pwd)/confs
 
 BINDIR=$(pwd)/bin
 
@@ -20,12 +20,12 @@ function install_file {
     fi
 }
 
-install_file ~/.bashrc $SCRIPTDIR/bashrc
-install_file ~/.config/kak/kakrc $SCRIPTDIR/kakrc
-install_file ~/.tmux.conf $SCRIPTDIR/tmux.conf
-install_file ~/.gitconfig $SCRIPTDIR/gitconfig
-install_file ~/.gitignore $SCRIPTDIR/gitignore
-install_file ~/.spacemacs $SCRIPTDIR/spacemacs
+install_file ~/.bashrc $CONFDIR/bashrc
+install_file ~/.config/kak/kakrc $CONFDIR/kakrc
+install_file ~/.tmux.conf $CONFDIR/tmux.conf
+install_file ~/.gitconfig $CONFDIR/gitconfig
+install_file ~/.gitignore $CONFDIR/gitignore
+install_file ~/.spacemacs $CONFDIR/spacemacs
 
 # install user bin files
 for i in $(ls $BINDIR); do
