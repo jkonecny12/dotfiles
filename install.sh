@@ -25,6 +25,7 @@ install_file ~/.config/kak/kakrc $SCRIPTDIR/kakrc
 install_file ~/.tmux.conf $SCRIPTDIR/tmux.conf
 install_file ~/.gitconfig $SCRIPTDIR/gitconfig
 install_file ~/.gitignore $SCRIPTDIR/gitignore
+install_file ~/.spacemacs $SCRIPTDIR/spacemacs
 
 # install user bin files
 for i in $(ls $BINDIR); do
