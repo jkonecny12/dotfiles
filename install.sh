@@ -10,10 +10,10 @@ function install_file {
         exit 1
     fi
 
-    if [ -e $1 ]; then
-        echo "File $1 already exists. Skipping!"
-    elif [ -h $1 ]; then
+    if [ -h $1 ]; then
         echo "File $1 already exists and is symbolic link. Skipping!"
+    elif [ -e $1 ]; then
+        echo "File $1 already exists. Skipping!"
     else
         echo "Creating symbolic link to $2"
         ln -s $2 $1
