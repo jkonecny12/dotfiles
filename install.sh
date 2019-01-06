@@ -22,14 +22,14 @@ function install_file {
     if [ -h $1 ]; then
         echo "File $1 is a symbolic link. Skipping!"
     elif [ -e $1 ]; then
-	if $REMOVE; then
-	    backup_and_remove $1
-	    create_symlink $1 $2
-	else
+        if $REMOVE; then
+            backup_and_remove $1
+            create_symlink $1 $2
+        else
             echo "File $1 already exists and it is NOT a symbolic link. Skipping!"
-	fi
+        fi
     else
-	create_symlink $1 $2
+        create_symlink $1 $2
     fi
 }
 
@@ -49,10 +49,10 @@ function create_symlink {
 
 function backup_and_remove {
     if [ -e $1 ]; then
-	mv $1 "$1.back"
-	echo "Backup $1.back created" >&2
+        mv $1 "$1.back"
+        echo "Backup $1.back created" >&2
     else
-	echo "Nothing to backup and remove -- this is most probably bug in the code!" >&2
+        echo "Nothing to backup and remove -- this is most probably bug in the code!" >&2
     fi
 }
 
@@ -65,14 +65,14 @@ function install_dir {
     if [ -h $1 ]; then
         echo "Directory $1 is a symbolic link. Skipping!"
     elif [ -d $1 ]; then
-	if $REMOVE; then
-	    backup_and_remove $1
-	    create_symlink $1 $2
-	else
-	    echo "Directory $1 already exists and it is NOT a symbolic link. Skipping!"
-	fi
+        if $REMOVE; then
+            backup_and_remove $1
+            create_symlink $1 $2
+        else
+            echo "Directory $1 already exists and it is NOT a symbolic link. Skipping!"
+        fi
     else
-	create_symlink $1 $2
+        create_symlink $1 $2
     fi
 }
 
