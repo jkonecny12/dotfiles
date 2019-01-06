@@ -15,6 +15,12 @@ function install_file {
     elif [ -e $1 ]; then
         echo "File $1 already exists and it is NOT a symbolic link. Skipping!"
     else
+	CONFDIR=$(dirname $1)
+	if [ ! -d $CONFDIR ]; then
+	    echo "Directory is missing -- creating!"
+	    mkdir -p $CONFDIR
+	fi
+
         echo "Creating symbolic link to $2"
         ln -s $2 $1
     fi
