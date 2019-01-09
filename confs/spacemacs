@@ -477,6 +477,7 @@ This function is called at the very end of Spacemacs initialization."
  '(flycheck-python-flake8-executable "python3")
  '(flycheck-python-pycompile-executable "python3")
  '(flycheck-python-pylint-executable "python3")
+ '(shell-file-name "/bin/bash")
  '(org-agenda-files (quote ("~/Documents/Personal/GTD")))
  '(org-capture-templates
    (quote
