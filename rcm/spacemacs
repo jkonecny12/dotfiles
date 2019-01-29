@@ -482,7 +482,15 @@ This function is called at the very end of Spacemacs initialization."
  '(org-agenda-files (quote ("~/Documents/Personal/GTD")))
  '(org-capture-templates
    (quote
-    (("t" "Add Task" entry
+    (("c" "Add a new contact" entry
+      (file "~/Documents/Personal/GTD/contacts.org")
+      "*** %^{prompt}
+:PROPERTIES:
+:IRC: %^{prompt}
+:Mail: %^{prompt}
+:END:
+%?" :jump-to-captured t)
+     ("t" "Add Task" entry
       (file+headline "~/Documents/Personal/GTD/main.org" "Tasks")
       "* TODO %? %i %^g
 :PROPERTIES:
