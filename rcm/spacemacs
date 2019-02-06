@@ -482,7 +482,14 @@ This function is called at the very end of Spacemacs initialization."
  '(org-agenda-files (quote ("~/Documents/Personal/GTD")))
  '(org-capture-templates
    (quote
-    (("c" "Add a new contact" entry
+    (("b" "Babysitting item" entry
+      (file "~/Documents/Personal/GTD/babysitting.org")
+      "** %?
+:PROPERTIES:
+:START: %^U
+:ENDED: %^U
+:END:" :jump-to-captured t)
+     ("c" "Add a new contact" entry
       (file "~/Documents/Personal/GTD/contacts.org")
       "*** %^{prompt}
 :PROPERTIES:
