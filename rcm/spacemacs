@@ -45,7 +45,8 @@ This function should only modify configuration layer settings."
           auto-completion-enable-snippets-in-popup t)
      ;; better-defaults
      (python :variables
-          python-fill-column 99)
+             python-fill-column 99
+             python-shell-interpreter "/usr/bin/python3")
      emacs-lisp
      git
      markdown
