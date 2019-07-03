@@ -467,6 +467,40 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+
+  (defun push-kickstart ()
+    "Push kickstart to cobra02 server.
+Push the current buffer as active kickstart file to a cobra02 server"
+    (interactive)
+    (set-process-filter
+     (start-process "push-kickstart" nil "~/RH/scripts/vm_scripts/push_kickstart.sh" (buffer-file-name))
+     (lambda (process output) (message "my output %s" output))
+     )
+    )
+
+  (defun add-python-paths ()
+    "Add anaconda python paths based on the project.
+
+If anaconda or anaconda-2 is the project name then add python-paths to enable other projects for auto-completion and similar."
+    (let (pykickstart-path blivet-path)
+      (setq pykickstart-path "~/Documents/RH/projects/pykickstart")
+      (setq blivet-path "~/Documents/RH/projects/blivet")
+      (if (equal (projectile-project-name) "anaconda")
+          (progn (message "Add extra python paths to anaconda")
+                 (add-to-list 'python-shell-extra-pythonpaths pykickstart-path)
+                 (add-to-list 'python-shell-extra-pythonpaths blivet-path))
+        (if (equal (projectile-project-name) "anaconda-2")
+            (progn (message "Add extra python paths to anaconda-2")
+                   (add-to-list 'python-shell-extra-pythonpaths pykickstart-path)
+                   (add-to-list 'python-shell-extra-pythonpaths blivet-path))
+          (progn (message "Removing python path from non-anaconda project")
+                 ; this doesn't work for some reason
+                 (delete 'python-shell-extra-pythonpaths pykickstart-path)
+                 (delete 'python-shell-extra-pythonpaths blivet-path)))
+        )
+      )
+    )
+;;  (add-hook 'projectile-after-switch-project-hook 'add-python-paths)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
