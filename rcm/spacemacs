@@ -515,6 +515,10 @@ If anaconda or anaconda-2 is the project name then add python-paths to enable ot
       )
     )
 ;;  (add-hook 'projectile-after-switch-project-hook 'add-python-paths)
+
+  ;; should improve how evil works with registers -- in testing
+  ;; see https://emacs.stackexchange.com/questions/14940/emacs-doesnt-paste-in-evils-visual-mode-with-every-os-clipboard/15054#15054
+  (fset 'evil-visual-update-x-selection 'ignore)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
