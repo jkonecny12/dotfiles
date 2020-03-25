@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: property DBus interface
+# key: property-dbus-interface
+# --
+@property
+def $1(self) -> $3:
+    """$4"""
+    return self.implementation.$2
+
+@emits_properties_changed
+def Set$1(self, $2: $3):
+    """$5"""
+    self.implementation.set_$2($2)

@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: test dbus property
+# key: test-dbus-property
+# --
+def $1_properties_test(self):
+    self.$2_interface.Set$3($4)
+    self.assertEqual(self.$2_interface.$3, $4)
+    self.callback.assert_called_once_with(
+        $5.interface_name, {"$3": $4}, [])

@@ -1,0 +1,21 @@
+# -*- mode: snippet -*-
+# name: property-DBus-implementation
+# key: property-dbus-impl
+# --
+@property
+def $1(self):
+    """$2
+
+    :rtype: $3
+    """
+    return self._$1
+
+def set_$1(self, $1):
+    """$4
+
+    :param $1: $5
+    :type $1: $3
+    """
+    self._$1 = $1
+    self.$1_changed.emit(self._$1)
+    log.debug("The $1 has changed")

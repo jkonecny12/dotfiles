@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: python property
+# key: property
+# contributor: dragonlich
+# --
+@property
+def $1(self):
+    return $2
