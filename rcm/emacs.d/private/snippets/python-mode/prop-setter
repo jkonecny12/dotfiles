@@ -8,4 +8,4 @@ def $1(self):
 
 @$1.setter
 def $1(self, $1):
-    $3
+    $2 = $1
