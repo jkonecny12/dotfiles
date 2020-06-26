@@ -539,6 +539,7 @@ This function is called at the very end of Spacemacs initialization."
  '(flycheck-python-pycompile-executable "python3")
  '(flycheck-python-pylint-executable "python3")
  '(importmagic-python-interpreter "ipython3")
+ '(ivy-rich-parse-remote-buffer nil)
  '(org-agenda-files (quote ("~/Nextcloud/GTD")))
  '(org-capture-templates
    (quote
