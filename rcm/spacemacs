@@ -67,6 +67,7 @@ This function should only modify configuration layer settings."
      go
      shell-scripts
      systemd
+     javascript
      )
 
    ;; List of additional packages that will be installed without being
@@ -540,10 +541,10 @@ This function is called at the very end of Spacemacs initialization."
  '(flycheck-python-pylint-executable "python3")
  '(importmagic-python-interpreter "ipython3")
  '(ivy-rich-parse-remote-buffer nil)
- '(org-agenda-files (quote ("~/Nextcloud/GTD")))
+ '(org-agenda-files
+   '("/home/jkonecny/Nextcloud/GTD/contacts.org" "/home/jkonecny/Nextcloud/GTD/daily_report.org" "/home/jkonecny/Nextcloud/GTD/main.org" "/home/jkonecny/Nextcloud/GTD/notes.org"))
  '(org-capture-templates
-   (quote
-    (("b" "Babysitting item" entry
+   '(("b" "Babysitting item" entry
       (file "~/Nextcloud/GTD/babysitting.org")
       "** %?
 :PROPERTIES:
@@ -570,10 +571,9 @@ This function is called at the very end of Spacemacs initialization."
 :PROPERTIES:
 :DAY: %u
 :END:
-** %?" :prepend t :jump-to-captured t))))
+** %?" :prepend t :jump-to-captured t)))
  '(package-selected-packages
-   (quote
-    (treemacs-projectile treemacs-evil treemacs ht pfuture systemd insert-shebang helm helm-core flycheck-bashate fish-mode company-shell helm-gtags godoctor go-tag go-rename go-impl go-guru go-gen-test go-fill-struct go-eldoc ggtags flycheck-gometalinter flycheck-golangci-lint counsel-gtags company-go go-mode web-mode web-beautify tagedit slim-mode scss-mode sass-mode pug-mode prettier-js impatient-mode simple-httpd helm-css-scss haml-mode emmet-mode counsel-css company-web web-completion-data add-node-modules-path git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter diff-hl browse-at-remote jinja2-mode company-ansible ansible-doc ansible mmm-mode markdown-toc gh-md yasnippet-snippets yapfify yaml-mode ws-butler writeroom-mode winum which-key wgrep volatile-highlights vi-tilde-fringe uuidgen use-package toc-org symon string-inflection spaceline-all-the-icons smex smeargle restart-emacs request rainbow-delimiters pyvenv pytest pyenv-mode py-isort popwin pippel pipenv pip-requirements persp-mode pcre2el password-generator paradox overseer orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file neotree nameless move-text markdown-mode magit-svn magit-gitflow macrostep lorem-ipsum live-py-mode link-hint ivy-yasnippet ivy-xref ivy-rich ivy-purpose ivy-hydra indent-guide importmagic hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio gnuplot gitignore-templates gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy font-lock+ flyspell-correct-ivy flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu elisp-slime-nav editorconfig dumb-jump dotenv-mode doom-modeline diminish define-word cython-mode counsel-projectile company-statistics company-emoji company-anaconda column-enforce-mode clean-aindent-mode centered-cursor-mode auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile aggressive-indent ace-window ace-link ace-jump-helm-line ac-ispell)))
+   '(tide typescript-mode tern nodejs-repl livid-mode skewer-mode js2-refactor multiple-cursors js2-mode js-doc import-js grizzl dap-mode posframe lsp-treemacs bui lsp-mode dash-functional treemacs-projectile treemacs-evil treemacs ht pfuture systemd insert-shebang helm helm-core flycheck-bashate fish-mode company-shell helm-gtags godoctor go-tag go-rename go-impl go-guru go-gen-test go-fill-struct go-eldoc ggtags flycheck-gometalinter flycheck-golangci-lint counsel-gtags company-go go-mode web-mode web-beautify tagedit slim-mode scss-mode sass-mode pug-mode prettier-js impatient-mode simple-httpd helm-css-scss haml-mode emmet-mode counsel-css company-web web-completion-data add-node-modules-path git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter diff-hl browse-at-remote jinja2-mode company-ansible ansible-doc ansible mmm-mode markdown-toc gh-md yasnippet-snippets yapfify yaml-mode ws-butler writeroom-mode winum which-key wgrep volatile-highlights vi-tilde-fringe uuidgen use-package toc-org symon string-inflection spaceline-all-the-icons smex smeargle restart-emacs request rainbow-delimiters pyvenv pytest pyenv-mode py-isort popwin pippel pipenv pip-requirements persp-mode pcre2el password-generator paradox overseer orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file neotree nameless move-text markdown-mode magit-svn magit-gitflow macrostep lorem-ipsum live-py-mode link-hint ivy-yasnippet ivy-xref ivy-rich ivy-purpose ivy-hydra indent-guide importmagic hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio gnuplot gitignore-templates gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy font-lock+ flyspell-correct-ivy flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu elisp-slime-nav editorconfig dumb-jump dotenv-mode doom-modeline diminish define-word cython-mode counsel-projectile company-statistics company-emoji company-anaconda column-enforce-mode clean-aindent-mode centered-cursor-mode auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile aggressive-indent ace-window ace-link ace-jump-helm-line ac-ispell))
  '(shell-file-name "/bin/bash"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
