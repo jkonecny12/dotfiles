@@ -3,6 +3,9 @@
 # Utility to solve backups between major system upgrades. This tool will always remove
 # the old snapshot and creates a new one.
 #
+# This utility will remove snapshot from the old system and from the current one
+# before creting new.
+#
 # This script has to be executed under root.
 #
 
@@ -35,6 +38,12 @@ if [ -n "$DISPLAY_OUTPUT" ]; then
     lvremove ${VG_NAME}/${OLD_SNAP_NAME}
 else
     echo "Old snapshot was not found"
+fi
+
+DISPLAY_OUTPUT=$(lvdisplay -S "lv_name = ${NEW_SNAP_NAME} && origin = ${LV_NAME} && vg_name = ${VG_NAME}")
+if [ -n "$DISPLAY_OUTPUT" ]; then
+    echo "Removing old version of snapshot: ${NEW_SNAP_NAME}"
+    lvremove ${VG_NAME}/${NEW_SNAP_NAME}
 fi
 
 echo "Creating new snapshot: ${NEW_SNAP_NAME}"
