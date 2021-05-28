@@ -2,4 +2,7 @@
 
 set -x MOZ_DBUS_REMOTE 1
 set -x EDITOR vim
-set -x MAN_PAGER 'sh -c "col -b | bat -pl man"'
+
+set -x theme_display_oci_container yes
+
+set -x fish_user_paths ~/bin/ $fish_user_paths
