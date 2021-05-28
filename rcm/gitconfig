@@ -4,7 +4,6 @@
 	signingkey = 99BB54998876D4905E72B52B38F52F0E5C3FAD25
 
 [core]
-	editor = kak
 	excludesfile = /home/jkonecny/.gitignore
 
 [credential]
