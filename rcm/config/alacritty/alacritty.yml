@@ -326,8 +326,8 @@ selection:
 #   - (macOS) /bin/bash --login
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
-shell:
-  program: /home/jkonecny/Documents/scripts/tmux_windows.sh
+# shell:
+#   program: /home/jkonecny/Documents/scripts/tmux_windows.sh
 #  args:
 #    - --login
 
