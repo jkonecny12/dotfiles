@@ -19,7 +19,7 @@ set $term alacritty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $menu rofi -theme dmenu -combi-modi "run,drun" -show combi | xargs swaymsg exec --
+set $menu rofi -theme Arc-Dark -combi-modi "drun,run" -show combi | xargs swaymsg exec --
 # Lock screen
 set $lock 'swaylock -f -c 000000 -i ~/Pictures/wallpapers/lock.jpg -s fill -l'
 
