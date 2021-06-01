@@ -208,7 +208,14 @@ input * {
 #
 workspace_auto_back_and_forth yes
 
-# FIXME: don' work yet
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+assign [app_id="firefox"] workspace $ws_web
+assign [class="Thunderbird"] workspace $ws_work
+assign [class="Hexchat"] workspace $ws_work
+assign [class="Emacs"] workspace $ws_code
+assign [class="Spotify"] workspace $ws_music
+
 # You can also use any non-zero value if you'd like to have a border
 for_window [class=".*"] border pixel 0
 gaps inner 5
