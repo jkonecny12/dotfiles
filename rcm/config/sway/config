@@ -251,6 +251,23 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #
+# Launch mode
+#
+mode "launch" {
+    bindsym f exec firefox
+    bindsym m exec flatpak run org.mozilla.Thunderbird
+    bindsym e exec emacs
+    bindsym t exec flatpak run org.telegram.desktop
+    bindsym i exec flatpak run io.github.Hexchat
+    bindsym p exec flatpak run com.tutanota.Tutanota
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+x mode "launch"
+
+#
 # Status Bar:
 #
 # Using Waybar instead of default swaybar.
