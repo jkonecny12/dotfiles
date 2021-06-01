@@ -260,6 +260,7 @@ mode "launch" {
     bindsym t exec flatpak run org.telegram.desktop
     bindsym i exec flatpak run io.github.Hexchat
     bindsym p exec flatpak run com.tutanota.Tutanota
+    bindsym s exec flatpak run com.spotify.Client
 
     # Return to default mode
     bindsym Return mode "default"
