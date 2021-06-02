@@ -199,6 +199,8 @@ input * {
     bindsym XF86AudioLowerVolume exec amixer set Master 5%-
     bindsym XF86AudioMute exec amixer set Master +1 toggle
     bindsym XF86AudioPlay exec playerctl -a play-pause
+    bindsym XF86AudioNext exec playerctl -a next
+    bindsym XF86AudioPrev exec playerctl -a previous
 
     bindsym XF86MonBrightnessDown exec brightnessctl set 10%- --device='*'
     bindsym XF86MonBrightnessUp exec brightnessctl set 10%+ --device='*'
