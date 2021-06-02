@@ -270,6 +270,9 @@ mode "launch" {
     bindsym p exec flatpak run com.tutanota.Tutanota
     bindsym s exec flatpak run com.spotify.Client
 
+    # run all the application for work by one key
+    bindsym a exec firefox; exec flatpak run org.mozilla.Thunderbird; exec flatpak run io.github.Hexchat; exec emacs
+
     # Return to default mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
