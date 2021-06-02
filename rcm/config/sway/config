@@ -69,7 +69,7 @@ exec swayidle -w \
 
 input * {
       xkb_layout us,cz(qwerty)
-      xkb_options "grp:alt_space_toggle"
+      xkb_options "grp:alt_shift_toggle"
 }
 
 ### Key bindings
