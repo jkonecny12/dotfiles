@@ -60,7 +60,7 @@
         "on-click": "alacritty -e nmtui"
     },
     "custom/network-vpn": {
-        "format": "connected 旅",
+        "format": "旅",
         "return-type": "json",
         "interval": 10,
         "tooltip": "yes",

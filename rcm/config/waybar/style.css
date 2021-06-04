@@ -98,6 +98,8 @@ window#waybar {
 
 #custom-network-vpn {
     background: rgb(102, 220, 105);
+    /* Add padding because the icon is not centered. */
+    padding-right: 6px;
 }
 
 #tray {
