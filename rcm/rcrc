@@ -1,0 +1,4 @@
+# Configuration file for RCM dotfiles.
+
+DOTFILES_DIRS="$(realpath ~/dotfiles/rcm)"
+UNDOTTED="bin Documents"
