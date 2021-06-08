@@ -1,0 +1,28 @@
+#!/bin/fish
+#
+# This is my personal init script which will do my daily updates and set-ups.
+#
+
+echo '##### kinit #####'
+toolbox run kinit
+
+echo '##### updating ostree #####'
+rpm-ostree update
+
+echo '##### updating flatpaks #####'
+flatpak update -y
+
+echo '##### updating spacemacs #####'
+pushd ~/.emacs.d/
+git pull --stat
+popd
+
+echo '##### getting list of firmware updates #####'
+fwupdmgr get-updates
+
+echo '##### updating toolbox #####'
+podman pull registry.fedoraproject.org/fedora-toolbox:34
+
+toolbox run sudo dnf update -y
+toolbox run -c dotfiles sudo dnf update -y
+toolbox run -c ddashboard sudo dnf update -y
