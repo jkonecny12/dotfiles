@@ -1,48 +1,52 @@
 [user]
-    name = Jiri Konecny
-    email = jkonecny@redhat.com
-	signingkey = 99BB54998876D4905E72B52B38F52F0E5C3FAD25
+  name = Jiri Konecny
+  email = jkonecny@redhat.com
+  signingkey = 99BB54998876D4905E72B52B38F52F0E5C3FAD25
 
 [core]
-	excludesfile = /home/jkonecny/.gitignore
+  excludesfile = /home/jkonecny/.gitignore
 
 [credential]
-    helper = /usr/bin/gnome-keyring
+  helper = /usr/bin/gnome-keyring
 
 [sendemail]
-    smtpserver = smtp.corp.redhat.com
-    smtpserverport = 587
-    envelopesender = jkonecny@redhat.com
-    smtpdomain = jkonecny-git-send-email
+  smtpserver = smtp.corp.redhat.com
+  smtpserverport = 587
+  envelopesender = jkonecny@redhat.com
+  smtpdomain = jkonecny-git-send-email
 
 [color]
-    ui = true
-    branch = true
-    diff = true
-    interactive = true
-    status = true
+  ui = true
+  branch = true
+  diff = true
+  interactive = true
+  status = true
 
 [alias]
-    fpaste = !sh -c 'git format-patch --stdout "$@" | fpaste -x 21600 -l diff ' -
-    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen (%cr) %C(bold blue)<%an>% Creset' --abbrev-commit
-    branch-last = !sh -c 'git for-each-ref --sort=-committerdate refs/heads/'
-    st = status
-    ci = commit
-    grepn = grep -n
-    lgv = log --color --graph --pretty=format:'%C(yellow)<%h> %C(bold blue)%cn%C(reset) %C(green)(%cr)%n%C(red)Author: %C(reset)%an%n%C(red)Date:   %C(reset)%ai%n%w(0,4,4)%C(red)[%C(reset) %s %C(red)]%C(reset)%n%n%w(0,4,4)%b%C(reset)%n'
-    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-    pr = pull --rebase
-    commite = commit --allow-empty-message
-    bh = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname)' refs/heads refs/remotes --count=25
+  fpaste = !sh -c 'git format-patch --stdout "$@" | fpaste -x 21600 -l diff ' -
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen (%cr) %C(bold blue)<%an>% Creset' --abbrev-commit
+  branch-last = !sh -c 'git for-each-ref --sort=-committerdate refs/heads/'
+  st = status
+  ci = commit
+  grepn = grep -n
+  lgv = log --color --graph --pretty=format:'%C(yellow)<%h> %C(bold blue)%cn%C(reset) %C(green)(%cr)%n%C(red)Author: %C(reset)%an%n%C(red)Date:   %C(reset)%ai%n%w(0,4,4)%C(red)[%C(reset) %s %C(red)]%C(reset)%n%n%w(0,4,4)%b%C(reset)%n'
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  pr = pull --rebase
+  commite = commit --allow-empty-message
+  bh = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname)' refs/heads refs/remotes --count=25
 
 [push]
-    default = current
+  default = current
+
 [merge]
-	tool = meld
+  tool = meld
+
 [commit]
-	template = /home/jkonecny/Documents/RH/documents/git/git-message.txt
-	gpgsign = true
+  template = /home/jkonecny/Documents/RH/documents/git/git-message.txt
+  gpgsign = true
+
 [gpg]
-	program = gpg2
+  program = gpg2
+
 [pull]
-	rebase = false
+  rebase = false
