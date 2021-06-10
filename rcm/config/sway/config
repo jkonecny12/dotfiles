@@ -220,6 +220,7 @@ for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
 assign [app_id="firefox"] workspace $ws_web
 assign [class="Thunderbird"] workspace $ws_comms
+assign [class="tutanota-desktop"] workspace $ws_comms
 assign [class="Hexchat"] workspace $ws_comms
 assign [class="Emacs"] workspace $ws_code
 assign [class="Spotify"] workspace $ws_music
