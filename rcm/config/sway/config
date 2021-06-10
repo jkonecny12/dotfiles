@@ -146,6 +146,10 @@ input * {
     workspace $ws_focus output $monitor_left
     workspace $ws_focus2 output $monitor_right
 
+    # Default layout for workspaces
+    for_window [workspace=$ws_web] layout stacking
+    for_window [workspace=$ws_comms] layout tabbed
+
     # Switch to workspace
     bindsym $mod+1 workspace $ws_web
     bindsym $mod+2 workspace $ws_code
