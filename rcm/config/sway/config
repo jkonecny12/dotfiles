@@ -131,7 +131,7 @@ input * {
     set $ws_web 1:web
     set $ws_code 2:code
     set $ws_term 3:term
-    set $ws_work 4:work
+    set $ws_comms 4:comms
     set $ws_music 5:music
     set $ws_urgent 6:urgent
     set $ws_focus 7:focus
@@ -140,7 +140,7 @@ input * {
     workspace $ws_web output $monitor_right
     workspace $ws_code output $monitor_right
     workspace $ws_term output $monitor_right
-    workspace $ws_work output $monitor_left
+    workspace $ws_comms output $monitor_left
     workspace $ws_music output $monitor_left
     workspace $ws_urgent output $monitor_right
     workspace $ws_focus output $monitor_left
@@ -150,7 +150,7 @@ input * {
     bindsym $mod+1 workspace $ws_web
     bindsym $mod+2 workspace $ws_code
     bindsym $mod+3 workspace $ws_term
-    bindsym $mod+4 workspace $ws_work
+    bindsym $mod+4 workspace $ws_comms
     bindsym $mod+5 workspace $ws_music
     bindsym $mod+6 workspace $ws_urgent
     bindsym $mod+7 workspace $ws_focus
@@ -161,7 +161,7 @@ input * {
     bindsym $mod+Shift+1 move container to workspace $ws_web
     bindsym $mod+Shift+2 move container to workspace $ws_code
     bindsym $mod+Shift+3 move container to workspace $ws_term
-    bindsym $mod+Shift+4 move container to workspace $ws_work
+    bindsym $mod+Shift+4 move container to workspace $ws_comms
     bindsym $mod+Shift+5 move container to workspace $ws_music
     bindsym $mod+Shift+6 move container to workspace $ws_urgent
     bindsym $mod+Shift+7 move container to workspace $ws_focus
@@ -215,8 +215,8 @@ workspace_auto_back_and_forth yes
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
 assign [app_id="firefox"] workspace $ws_web
-assign [class="Thunderbird"] workspace $ws_work
-assign [class="Hexchat"] workspace $ws_work
+assign [class="Thunderbird"] workspace $ws_comms
+assign [class="Hexchat"] workspace $ws_comms
 assign [class="Emacs"] workspace $ws_code
 assign [class="Spotify"] workspace $ws_music
 
