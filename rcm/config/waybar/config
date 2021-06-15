@@ -18,8 +18,9 @@
             "4:comms": "",
             "5:music": "",
             // "6:docs": "",
-            "6:urgent": "",
-            "7:focus": "",
+            "6:focus": "",
+            "7:focus-2": "",
+            "8:urgent": "",
             "default": ""
         }
     },

@@ -133,18 +133,18 @@ input * {
     set $ws_term 3:term
     set $ws_comms 4:comms
     set $ws_music 5:music
-    set $ws_urgent 6:urgent
-    set $ws_focus 7:focus
-    set $ws_focus2 8:focus-2
+    set $ws_focus 6:focus
+    set $ws_focus2 7:focus-2
+    set $ws_urgent 8:urgent
 
     workspace $ws_web output $monitor_right
     workspace $ws_code output $monitor_right
     workspace $ws_term output $monitor_right
     workspace $ws_comms output $monitor_left
     workspace $ws_music output $monitor_left
-    workspace $ws_urgent output $monitor_right
     workspace $ws_focus output $monitor_left
     workspace $ws_focus2 output $monitor_right
+    workspace $ws_urgent output $monitor_right
 
     # Default layout for workspaces
     for_window [workspace=$ws_web] layout stacking
@@ -156,9 +156,9 @@ input * {
     bindsym $mod+3 workspace $ws_term
     bindsym $mod+4 workspace $ws_comms
     bindsym $mod+5 workspace $ws_music
-    bindsym $mod+6 workspace $ws_urgent
-    bindsym $mod+7 workspace $ws_focus
-    bindsym $mod+8 workspace $ws_focus2
+    bindsym $mod+6 workspace $ws_focus
+    bindsym $mod+7 workspace $ws_focus2
+    bindsym $mod+8 workspace $ws_urgent
     bindsym $mod+9 workspace number 9
     bindsym $mod+0 workspace number 0
     # Move focused container to workspace
@@ -167,9 +167,9 @@ input * {
     bindsym $mod+Shift+3 move container to workspace $ws_term
     bindsym $mod+Shift+4 move container to workspace $ws_comms
     bindsym $mod+Shift+5 move container to workspace $ws_music
-    bindsym $mod+Shift+6 move container to workspace $ws_urgent
-    bindsym $mod+Shift+7 move container to workspace $ws_focus
-    bindsym $mod+Shift+8 move container to workspace $ws_focus2
+    bindsym $mod+Shift+6 move container to workspace $ws_focus
+    bindsym $mod+Shift+7 move container to workspace $ws_focus2
+    bindsym $mod+Shift+8 move container to workspace $ws_urgent
     bindsym $mod+Shift+9 move container to workspace number 9
     bindsym $mod+Shift+0 move container to workspace number 0
 #
