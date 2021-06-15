@@ -38,7 +38,7 @@ window#waybar {
     border-bottom: 3px solid white;
 }
 
-#clock, #battery, #cpu, #memory, #network, #custom-network-vpn, #pulseaudio, #custom-spotify, #idle_inhibitor, #tray, #mode {
+#clock, #battery, #cpu, #memory, #temperature, #network, #custom-network-vpn, #pulseaudio, #custom-spotify, #idle_inhibitor, #tray, #mode {
     padding: 0 3px;
     margin: 0 4px;
 }
@@ -71,6 +71,9 @@ window#waybar {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+}
+
+#temperature {
 }
 
 #cpu {

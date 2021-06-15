@@ -6,7 +6,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "custom/spotify"],
     "modules-center": ["sway/window"],
-    "modules-right": ["network", "custom/network-vpn", "cpu", "memory", "battery", "pulseaudio", "tray", "idle_inhibitor", "clock"],
+    "modules-right": ["network", "custom/network-vpn", "temperature", "cpu", "memory", "battery", "pulseaudio", "tray", "idle_inhibitor", "clock"],
     "sway/workspaces": {
         "disable-scroll": true,
         "all-outputs": false,
@@ -41,6 +41,9 @@
     "clock": {
         "format": "{:%a %Y-%m-%d - %R}",
         "on-click": "flatpak run org.gnome.Calendar"
+    },
+    "temperature": {
+        "format": "{temperatureC}°C "
     },
     "cpu": {
         "format": "{usage}% "
