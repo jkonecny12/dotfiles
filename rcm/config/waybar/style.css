@@ -38,7 +38,7 @@ window#waybar {
     border-bottom: 3px solid white;
 }
 
-#clock, #battery, #cpu, #memory, #network, #custom-network-vpn, #pulseaudio, #custom-spotify, #tray, #mode {
+#clock, #battery, #cpu, #memory, #network, #custom-network-vpn, #pulseaudio, #custom-spotify, #idle_inhibitor, #tray, #mode {
     padding: 0 3px;
     margin: 0 4px;
 }
@@ -100,6 +100,9 @@ window#waybar {
     background: rgb(102, 220, 105);
     /* Add padding because the icon is not centered. */
     padding-right: 6px;
+}
+
+#idle_inhibitor {
 }
 
 #tray {

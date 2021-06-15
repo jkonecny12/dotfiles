@@ -6,7 +6,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "custom/spotify"],
     "modules-center": ["sway/window"],
-    "modules-right": ["network", "custom/network-vpn", "cpu", "memory", "battery", "pulseaudio", "tray", "clock"],
+    "modules-right": ["network", "custom/network-vpn", "cpu", "memory", "battery", "pulseaudio", "tray", "idle_inhibitor", "clock"],
     "sway/workspaces": {
         "disable-scroll": true,
         "all-outputs": false,
@@ -30,6 +30,13 @@
     "tray": {
         // "icon-size": 21,
         "spacing": 5
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": "﯈"
+        }
     },
     "clock": {
         "format": "{:%a %Y-%m-%d - %R}",
