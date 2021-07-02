@@ -14,7 +14,9 @@ flatpak update -y
 
 echo '##### updating spacemacs #####'
 pushd ~/.emacs.d/
-git pull --stat
+git fetch
+git log --oneline HEAD..origin/develop
+git pull
 popd
 
 echo '##### getting list of firmware updates #####'
