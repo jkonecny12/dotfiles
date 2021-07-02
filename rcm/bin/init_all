@@ -26,5 +26,8 @@ echo '##### updating toolbox #####'
 podman pull registry.fedoraproject.org/fedora-toolbox:34
 
 toolbox run sudo dnf update -y
-toolbox run -c dotfiles sudo dnf update -y
-toolbox run -c ddashboard sudo dnf update -y
+
+for name in dotfiles ddashboard emacs
+    echo "Updating $name container"
+    toolbox run -c $name sudo dnf update -y
+end
