@@ -301,6 +301,7 @@ bar {
 #
 exec mako
 exec flatpak run com.nextcloud.desktopclient.nextcloud
+exec $HOME/bin/SpiderOakGroups
 
 
 include /etc/sway/config.d/*
