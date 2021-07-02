@@ -299,6 +299,8 @@ bar {
 #
 # Autostart applications
 #
+exec mako
 exec flatpak run com.nextcloud.desktopclient.nextcloud
+
 
 include /etc/sway/config.d/*
